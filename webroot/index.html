@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jinx Fixes Everything room select</title>
+  </head>
+  <body>
+    <h1>Jinx Fixes Everything</h1>
+    <h2>Locale options</h2>
+    <p>
+      Select a locale
+      <select id="loca">
+        <option value="ar-AE">ar-AE</option>
+        <option value="cs-CZ">cs-CZ</option>
+        <option value="de-DE">de-DE</option>
+        <option value="el-GR">el-GR</option>
+        <option value="en-us" selected>en-US</option>
+        <option value="es-ES">es-ES</option>
+        <option value="es-MX">es-MX</option>
+        <option value="fr-FR">fr-FR</option>
+        <option value="hu-HU">hu-HU</option>
+        <option value="ja-JP">ja-JP</option>
+        <option value="ko-KR">ko-KR</option>
+        <option value="pl-PL">pl-PL</option>
+        <option value="pt-BR">pt-BR</option>
+        <option value="ro-RO">ro-RO</option>
+        <option value="ru-RU">ru-RU</option>
+        <option value="tr-TR">tr-TR</option>
+        <option value="zh-CN">zh-CN</option>
+      </select>
+    </p>
+    <h2>Room select</h2>
+    <p>
+      Select a room
+      <select id="room">
+        <option value="arcade.html">Room 1</option>
+        <option value="lastdrop.html">Room 2</option>
+        <option value="firelight.html">Room 3</option>
+      </select>
+    </p>
+    <p>
+      <button type="button" onClick="launch_room();">Go!</button>
+    </p>
+
+    <script type="text/javascript">
+      function launch_room() {
+        let room = document.getElementById("room").value;
+        let loca = document.getElementById("loca").value;
+
+        window.open(room.concat("?locale=", loca), "_self");
+      }
+    </script>
+  </body>
+</html>
+
+
