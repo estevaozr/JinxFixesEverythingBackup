@@ -1,0 +1,14 @@
+services:
+  nginx:
+    build:
+      dockerfile: Dockerfile
+    volumes:
+      - ./webroot:/webroot:ro
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 1024
+        hard: 1024
+
